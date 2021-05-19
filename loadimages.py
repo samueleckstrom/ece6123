@@ -12,10 +12,16 @@ def load_images(number_of_frames):
   images = images_1 + images_2 #+ images_3 + images_4 + images_5 + images_6
   return images
 
+def load_test_images(number_of_frames):
+  images_1 = get_images_from_folder('shoe/images/shoe_', 600, number_of_frames)
+  images_2 = get_images_from_folder('monkey5/monkey5_', 577, number_of_frames)
+  images = images_1 + images_2 #+ images_3 + images_4 + images_5 + images_6
+  return images
+
 def get_images_from_folder(name, total_number_of_images, number_of_frames):
   number_of_frames += number_of_frames + 1
   sequences = list()
-  for i in range(1, total_number_of_images - number_of_frames):
+  for i in range(100, 109): #range(1, total_number_of_images - number_of_frames):
     sequence_of_images = list()
     for j in range(number_of_frames):
       frame_name = get_name_for_image(name, i + j, total_number_of_images)
